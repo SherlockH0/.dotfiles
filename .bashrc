@@ -113,3 +113,5 @@ if ! shopt -oq posix; then
 fi
 
 eval "$(starship init bash)"
+
+. /usr/share/autojump/autojump.sh
