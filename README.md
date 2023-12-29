@@ -1,2 +1,2 @@
 # .dotfiles
-my debian linux dotfiles
+My debian linux dotfiles
