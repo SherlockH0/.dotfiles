@@ -1,0 +1,2 @@
+[python]
+format = "py [$version](yellow)"
