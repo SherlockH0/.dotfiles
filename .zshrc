@@ -1,6 +1,5 @@
 # Set up the prompt
 
-neofetch --config ~/.config/neofetch/config.conf
 
 setopt histignorealldups sharehistory
 
@@ -34,8 +33,10 @@ zstyle ':completion:*' verbose true
 zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#)*=0=01;31'
 zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,tty,cputime,cmd'
 
-export PATH="$PATH:/opt/nvim-linux64/bin:/home/sherlock/.local/bin:/home/sherlock/quickemu"
+export PATH="$PATH:/opt/nvim/:/home/sherlock/.local/bin:/home/sherlock/quickemu"
 eval "$(starship init zsh)"
 source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 eval "$(zoxide init zsh)"
+
+alias neofetch="neofetch --config ~/.config/neofetch/config.conf"

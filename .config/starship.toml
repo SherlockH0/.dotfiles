@@ -66,14 +66,14 @@ style = "white"
 format = "[ $path ]($style)"
 truncation_length = 3
 truncation_symbol = "…/"
-read_only = " 󰌾"
+read_only = " 󰌾 "
 
 [directory.substitutions]
 "Documents" = "󰈙 "
 "Downloads" = " "
 "Music" = " "
 "Pictures" = " "
-".config" = ""
+".config" = " "
 
 [git_branch]
 symbol = " "

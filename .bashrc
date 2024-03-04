@@ -112,6 +112,7 @@ if ! shopt -oq posix; then
   fi
 fi
 
+export PATH="$PATH:/opt/nvim/"
 eval "$(starship init bash)"
 
 . /usr/share/autojump/autojump.sh
