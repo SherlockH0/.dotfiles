@@ -37,6 +37,8 @@ export PATH="$PATH:/opt/nvim/:/home/sherlock/.local/bin:/home/sherlock/quickemu"
 eval "$(starship init zsh)"
 source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
-eval "$(zoxide init zsh)"
+eval "$(zoxide init zsh --cmd cd)"
 
 alias neofetch="neofetch --config ~/.config/neofetch/config.conf"
+
+source ~/env.sh

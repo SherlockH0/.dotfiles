@@ -25,3 +25,8 @@ keymap.set("n", "Q", "<nop>")
 
 keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
 keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
+
+keymap.set("n", "<C-h>", "<cmd> TmuxNavigateLeft<CR>")
+keymap.set("n", "<C-l>", "<cmd> TmuxNavigateRight<CR>")
+keymap.set("n", "<C-j>", "<cmd> TmuxNavigateDown<CR>")
+keymap.set("n", "<C-k>", "<cmd> TmuxNavigateUp<CR>")
