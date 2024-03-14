@@ -13,6 +13,8 @@ return {
 		"hrsh7th/cmp-nvim-lua",
 		"L3MON4D3/LuaSnip",
 		"rafamadriz/friendly-snippets",
+		"roobert/tailwindcss-colorizer-cmp.nvim",
+		"onsails/lspkind.nvim",
 	},
 
 	config = function()
@@ -63,11 +65,19 @@ return {
 			hint = "󰌶",
 			info = "󰋽",
 		})
-
 		-- to learn how to use mason.nvim with lsp-zero
 		-- read this: https://github.com/VonHeikemen/lsp-zero.nvim/blob/v3.x/doc/md/guides/integrate-with-mason-nvim.md
 		require("mason").setup({})
 		require("mason-lspconfig").setup({
+			ensure_installed = {
+				"tsserver",
+				"lua_ls",
+				"pyright",
+				"emmet_language_server",
+				"tailwindcss",
+				"html",
+			},
+			automatic_instalation = true,
 			handlers = {
 				lsp_zero.default_setup,
 				require("lspconfig").lua_ls.setup({
@@ -97,6 +107,44 @@ return {
 			preselect = "item",
 			completion = {
 				completeopt = "menu,menuone,noinsert",
+			},
+			formatting = {
+				fields = { "abbr", "kind" },
+				format = function(entry, item)
+					require("lspkind").cmp_format({
+						max_width = 30,
+						ellipsis_char = "...",
+						mode = "symbol",
+						symbol_map = {
+							Text = "󰉿 ",
+							Method = "󰆧 ",
+							Function = "󰊕 ",
+							Constructor = " ",
+							Field = "󰜢 ",
+							Variable = "󰀫 ",
+							Class = "󰠱 ",
+							Interface = " ",
+							Module = " ",
+							Property = "󰜢 ",
+							Unit = "󰑭 ",
+							Value = "󰎠 ",
+							Enum = " ",
+							Keyword = "󰌋 ",
+							Snippet = " ",
+							Color = "󰏘 ",
+							File = "󰈙 ",
+							Reference = "󰈇 ",
+							Folder = "󰉋 ",
+							EnumMember = " ",
+							Constant = "󰏿 ",
+							Struct = "󰙅 ",
+							Event = " ",
+							Operator = "󰆕 ",
+							TypeParameter = " ",
+						},
+					})(entry, item)
+					return require("tailwindcss-colorizer-cmp").formatter(entry, item)
+				end,
 			},
 			mapping = cmp.mapping.preset.insert({
 				["<Tab>"] = cmp_action.luasnip_supertab(),
