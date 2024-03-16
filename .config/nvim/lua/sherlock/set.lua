@@ -34,3 +34,4 @@ vim.opt.signcolumn = "yes"
 vim.opt.isfname:append("@-@")
 
 vim.opt.showmode = false
+vim.opt.wrap = false

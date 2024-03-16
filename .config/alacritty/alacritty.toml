@@ -1,26 +1,29 @@
+[env]
+term = "xterm-256color"
+
 [colors.bright]
-black = "0x32302f"
-blue = "0x7daea3"
-cyan = "0x89b482"
-green = "0xa9b665"
-magenta = "0xd3869b"
-red = "0xea6962"
-white = "0xd4be98"
-yellow = "0xd8a657"
+black = "#32302f"
+blue = "#7daea3"
+cyan = "#89b482"
+green = "#a9b665"
+magenta = "#d3869b"
+red = "#ea6962"
+white = "#d4be98"
+yellow = "#d8a657"
 
 [colors.normal]
-black = "0x32302f"
-blue = "0x7daea3"
-cyan = "0x89b482"
-green = "0xa9b665"
-magenta = "0xd3869b"
-red = "0xea6962"
-white = "0xd4be98"
-yellow = "0xd8a657"
+black = "#32302f"
+blue = "#7daea3"
+cyan = "#89b482"
+green = "#a9b665"
+magenta = "#d3869b"
+red = "#ea6962"
+white = "#d4be98"
+yellow = "#d8a657"
 
 [colors.primary]
 background = "#1d2021"
-foreground = "0xd4be98"
+foreground = "#d4be98"
 
 [font]
 builtin_box_drawing = false
@@ -43,7 +46,7 @@ family = "FantasqueSansM Nerd Font"
 style = "Regular"
 
 [window]
-opacity = 0.9
+opacity = 1
 
 [window.padding]
 x = 10

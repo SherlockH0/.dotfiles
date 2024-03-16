@@ -109,7 +109,7 @@ return {
 				completeopt = "menu,menuone,noinsert",
 			},
 			formatting = {
-				fields = { "abbr", "kind" },
+				fields = { "kind", "abbr" },
 				format = function(entry, item)
 					require("lspkind").cmp_format({
 						max_width = 30,

@@ -16,7 +16,9 @@ return {
 					require("formatter.filetypes.lua").stylua,
 				},
 				python = {
+					require("formatter.filetypes.python").autoflake,
 					require("formatter.filetypes.python").black,
+					require("formatter.filetypes.python").isort,
 				},
 				javascript = { require("formatter.defaults.prettier") },
 				typescript = { require("formatter.defaults.prettier") },
@@ -32,6 +34,15 @@ return {
 				flow = { require("formatter.defaults.prettier") },
 				graphql = { require("formatter.defaults.prettier") },
 				html = { require("formatter.defaults.prettier") },
+				htmldjango = {
+					function()
+						return {
+							exe = "djlint",
+							args = { "--reformat", "-" },
+							stdin = true,
+						}
+					end,
+				},
 				["*"] = {
 					require("formatter.filetypes.any").remove_trailing_whitespace,
 				},
