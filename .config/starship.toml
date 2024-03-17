@@ -76,16 +76,19 @@ read_only = " 󰌾 "
 ".config" = " "
 
 [git_branch]
+style = 'green'
 symbol = " "
+format = '[on](dimmed) [$symbol$branch(:$remote_branch)]($style) '
 
 [git_status]
-format = '([\[ $all_status$ahead_behind\]]($style) )'
+style = 'dimmed green'
+format = '([$all_status$ahead_behind]($style) )'
 conflicted = '= '
 ahead = ' '
 behind = ' '
 diverged = '󱡷 '
 up_to_date = ' '
-untracked = '? '
+untracked = '?'
 stashed = '󰏗 '
 modified = '󱇧 '
 staged = '[\(+$count\) ](green)'
