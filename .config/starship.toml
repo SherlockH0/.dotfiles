@@ -56,7 +56,7 @@ $openstack\
 $azure\
 $crystal\
 \n\
-$character"""
+$character """
 
 [fill]
 symbol = " "
@@ -76,12 +76,12 @@ read_only = " 󰌾 "
 ".config" = " "
 
 [git_branch]
-style = 'green'
+style = 'yellow'
 symbol = " "
 format = '[on](dimmed) [$symbol$branch(:$remote_branch)]($style) '
 
 [git_status]
-style = 'dimmed green'
+style = 'dimmed yellow'
 format = '([$all_status$ahead_behind]($style) )'
 conflicted = '= '
 ahead = ' '

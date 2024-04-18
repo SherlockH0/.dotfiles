@@ -4,7 +4,7 @@
 setopt histignorealldups sharehistory
 
 # Use emacs keybindings even if our EDITOR is set to vi
-bindkey -e
+bindkey -v
 
 # Keep 1000 lines of history within the shell and save it to ~/.zsh_history:
 HISTSIZE=1000
@@ -33,12 +33,21 @@ zstyle ':completion:*' verbose true
 zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#)*=0=01;31'
 zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,tty,cputime,cmd'
 
-export PATH="$PATH:/opt/nvim/:/home/sherlock/.local/bin:/home/sherlock/quickemu"
+export PATH="$PATH:/home/sherlock/.local/bin"
+
+# Keybindings
+bindkey "^[l" clear-screen
+
+# Start starship
 eval "$(starship init zsh)"
+
+# Load zsh pligins
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+source "$HOME/zsh-vim-mode/zsh-vim-mode.plugin.zsh"
+
+# Load zoxide and remap cd
 eval "$(zoxide init zsh --cmd cd)"
 
-alias neofetch="neofetch --config ~/.config/neofetch/config.conf"
-
+# Load eniroment variables
 source ~/env.sh

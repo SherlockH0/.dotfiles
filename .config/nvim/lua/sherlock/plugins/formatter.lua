@@ -38,7 +38,7 @@ return {
 					function()
 						return {
 							exe = "djlint",
-							args = { "--reformat", "-" },
+							args = { "--reformat", "-", "--indent 2" },
 							stdin = true,
 						}
 					end,
@@ -56,5 +56,9 @@ return {
 			group = "__formatter__",
 			command = ":FormatWrite",
 		})
+
+		-- set keymaps
+		local keymap = vim.keymap
+		keymap.set({ "n", "i" }, "<A-f>", "<cmd>Format<CR>")
 	end,
 }

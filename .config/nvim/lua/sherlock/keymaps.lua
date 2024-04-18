@@ -2,8 +2,8 @@ local keymap = vim.keymap
 
 vim.g.mapleader = " "
 
-keymap.set("v", "J", ":m '>+1<CR>gv=gv")
-keymap.set("v", "K", ":m '>-2<CR>gv=gv")
+keymap.set("v", "K", ":m '<-2<CR>gv=gv", { silent = true })
+keymap.set("v", "J", ":m '>+1<CR>gv=gv", { silent = true })
 
 keymap.set("n", "J", "mzJ`z")
 keymap.set("n", "<C-d>", "<C-d>zz")
@@ -31,6 +31,9 @@ keymap.set("n", "<C-l>", "<cmd> TmuxNavigateRight<CR>")
 keymap.set("n", "<C-j>", "<cmd> TmuxNavigateDown<CR>")
 keymap.set("n", "<C-k>", "<cmd> TmuxNavigateUp<CR>")
 
-keymap.set("n", "<c-]>", "<cmd> bnext<cr>")
-keymap.set("n", "<c-[>", "<cmd> bprevious<cr>")
-keymap.set("n", "<c-q>", "<cmd> bd<cr>")
+keymap.set("n", "]b", "<cmd> bnext<cr>")
+keymap.set("n", "[b", "<cmd> bprevious<cr>")
+keymap.set("n", "[q", "<cmd> bd<cr>")
+
+-- Change detect filetype
+keymap.set("n", "<leader>r", "<cmd>filetype detect<CR>")
