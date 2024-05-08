@@ -51,3 +51,5 @@ eval "$(zoxide init zsh --cmd cd)"
 
 # Load eniroment variables
 source ~/env.sh
+# Load aliases
+source ~/aliases.sh

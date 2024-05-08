@@ -36,6 +36,8 @@ vim.opt.isfname:append("@-@")
 vim.opt.showmode = false
 vim.opt.wrap = false
 
+vim.opt.cursorline = true
+
 -- Toggle inline fold when opening .html
 vim.api.nvim_create_autocmd({ "BufEnter", "BufWinEnter" }, {
 	pattern = { "*.html", "*.tsx" },
