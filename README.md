@@ -7,7 +7,7 @@
 Use your favorite package manager (`paru -S` or `pacman -S` for Arch) to install these dependencies:
 
 ```bash
-git stow
+git stow ripgrep 
 ```
 
 ### Initialize dotfiles
