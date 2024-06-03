@@ -33,7 +33,7 @@ zstyle ':completion:*' verbose true
 zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#)*=0=01;31'
 zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,tty,cputime,cmd'
 
-export PATH="$PATH:/home/sherlock/.local/bin"
+export PATH="$PATH:/home/$USER/.local/bin"
 
 # Keybindings
 bindkey "^[l" clear-screen
@@ -42,9 +42,9 @@ bindkey "^[l" clear-screen
 eval "$(starship init zsh)"
 
 # Load zsh pligins
-source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
-source "$HOME/zsh-vim-mode/zsh-vim-mode.plugin.zsh"
+source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source /usr/share//zsh-autosuggestions/zsh-autosuggestions.zsh
+source $HOME/.zsh-vi-mode/zsh-vi-mode.plugin.zsh
 
 # Load zoxide and remap cd
 eval "$(zoxide init zsh --cmd cd)"
@@ -53,3 +53,9 @@ eval "$(zoxide init zsh --cmd cd)"
 source ~/env.sh
 # Load aliases
 source ~/aliases.sh
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+eval "$(direnv hook zsh)"
