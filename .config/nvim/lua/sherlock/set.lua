@@ -39,11 +39,11 @@ vim.opt.wrap = false
 vim.opt.cursorline = true
 
 -- Toggle inline fold when opening .html
-vim.api.nvim_create_autocmd({ "BufEnter", "BufWinEnter" }, {
+--[[ vim.api.nvim_create_autocmd({ "BufEnter", "BufWinEnter" }, {
 	pattern = { "*.html", "*.tsx" },
 	callback = function(_)
 		if not require("inline-fold.module").isHidden then
 			vim.cmd("InlineFoldToggle")
 		end
 	end,
-})
+}) ]]
