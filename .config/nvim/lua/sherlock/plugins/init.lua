@@ -1,5 +1,6 @@
 return {
 	{ "lewis6991/gitsigns.nvim", config = true },
+	"fladson/vim-kitty",
 	"lambdalisue/suda.vim",
 	{ "christoomey/vim-tmux-navigator", lazy = false },
 	{
@@ -9,6 +10,7 @@ return {
 		end,
 	},
 	"tpope/vim-surround",
+	"qaiviq/vim-imager",
 	{
 		"lukas-reineke/indent-blankline.nvim",
 		main = "ibl",

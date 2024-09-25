@@ -1,0 +1,16 @@
+#!/bin/sh
+
+SESSIONNAME="music" # Put session name here
+SESSIONDIRECTORY="~/Music/" # Put directory you want to start session in here
+
+tmux has-session -t $SESSIONNAME &> /dev/null
+
+if [ $? != 0 ]
+    then
+        tmux new-session -s $SESSIONNAME -n $SESSIONNAME -c $SESSIONDIRECTORY -d
+        tmux send-keys -t $SESSIONNAME "cava" C-m
+        tmux splitw -l 12 "musikcube"
+        tmux send-keys -t $SESSIONNAME , Enter
+fi
+
+tmux attach -t $SESSIONNAME

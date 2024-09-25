@@ -12,7 +12,7 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
-	{ import = "sherlock.plugins" },
+	{ { import = "sherlock.plugins" }, { import = "sherlock.plugins.lsp" } },
 }, {
 	install = {
 		colorscheme = { "gruvbox-material" },

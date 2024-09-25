@@ -17,15 +17,15 @@ return {
 				lualine_c = { { "filename", path = 4, newfile_status = true } },
 				lualine_x = { "branch" },
 				lualine_y = { "filetype" },
-				lualine_z = { "location" },
+				lualine_z = { "location", "progress" },
 			},
 			inactive_sections = {
-				lualine_a = { "filename" },
+				lualine_a = { { "filename", path = 4, newfile_status = true } },
 				lualine_b = {},
 				lualine_c = {},
 				lualine_x = {},
 				lualine_y = {},
-				lualine_z = { "location" },
+				lualine_z = { "location", "progress" },
 			},
 		})
 	end,

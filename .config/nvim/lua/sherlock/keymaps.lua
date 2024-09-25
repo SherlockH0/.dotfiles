@@ -24,6 +24,7 @@ keymap.set("i", "<C-c>", "<Esc>")
 keymap.set("n", "Q", "<nop>")
 
 keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
+keymap.set("v", "<leader>s", '"hy:%s/<C-r>h/<C-r>h/gc<left><left><left>')
 keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
 
 keymap.set("n", "<C-h>", "<cmd> TmuxNavigateLeft<CR>")
@@ -37,3 +38,8 @@ keymap.set("n", "[q", "<cmd> bd<cr>")
 
 -- Change detect filetype
 keymap.set("n", "<leader>r", "<cmd>filetype detect<CR>")
+
+-- Print
+keymap.set("n", "<leader>ph", "<cmd>!firefox --headless --print file://% /tmp/nvim.pdf && lp /tmp/nvim.pdf<cr>")
+keymap.set("n", "<leader>pm", "<cmd>!pandoc % -o /tmp/nvim.pdf && lp /tmp/nvim.pdf<cr>")
+keymap.set("n", "<leader>pp", "<cmd>!lp %<cr>")

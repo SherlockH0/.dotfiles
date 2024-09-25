@@ -34,6 +34,7 @@ zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#)*=0=01;31'
 zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,tty,cputime,cmd'
 
 export PATH="$PATH:/home/$USER/.local/bin"
+export EDITOR=nvim
 
 # Keybindings
 bindkey "^[l" clear-screen
@@ -42,9 +43,9 @@ bindkey "^[l" clear-screen
 eval "$(starship init zsh)"
 
 # Load zsh pligins
-source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-source /usr/share//zsh-autosuggestions/zsh-autosuggestions.zsh
-source $HOME/.zsh-vi-mode/zsh-vi-mode.plugin.zsh
+source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+source /usr/share/zsh/plugins/zsh-vi-mode/zsh-vi-mode.plugin.zsh
 
 # Load zoxide and remap cd
 eval "$(zoxide init zsh --cmd cd)"
@@ -59,3 +60,12 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 eval "$(direnv hook zsh)"
+export PYENV_ROOT="$HOME/.pyenv"
+[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
+
+
+# Load python virtual env if it is preset
+if [[ -d ./venv ]] ; then
+    source ./venv/bin/activate
+fi

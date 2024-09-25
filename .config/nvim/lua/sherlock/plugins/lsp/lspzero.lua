@@ -70,12 +70,13 @@ return {
 		require("mason").setup({})
 		require("mason-lspconfig").setup({
 			ensure_installed = {
-				"tsserver",
+				"ts_ls",
 				"lua_ls",
 				"pyright",
 				"emmet_language_server",
 				"tailwindcss",
 				"html",
+				"pyright",
 			},
 			automatic_instalation = true,
 			handlers = {
@@ -93,8 +94,8 @@ return {
 				require("lspconfig").html.setup({
 					filetypes = { "html", "htmldjango" },
 				}),
-				require("lspconfig").tsserver.setup({
-					filetypes = { "html", "htmldjango", "javascript" },
+				require("lspconfig").ts_ls.setup({
+					filetypes = { "html", "htmldjango", "javascript", "typescript" },
 				}),
 			},
 		})

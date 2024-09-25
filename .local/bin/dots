@@ -1,0 +1,14 @@
+#!/bin/sh
+
+SESSIONNAME="dots"
+tmux has-session -t $SESSIONNAME &> /dev/null
+
+if [ $? != 0 ]
+    then
+        tmux new-session -s $SESSIONNAME -n $SESSIONNAME -c ~/.dotfiles/ -d
+        tmux send-keys -t $SESSIONNAME "n ." C-m
+        tmux send-keys -t $SESSIONNAME H
+
+fi
+
+tmux attach -t $SESSIONNAME

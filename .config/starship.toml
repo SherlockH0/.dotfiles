@@ -73,6 +73,7 @@ read_only = " 󰌾 "
 "Downloads" = " "
 "Music" = " "
 "Pictures" = " "
+"Desktop" = " "
 ".config" = " "
 
 [git_branch]

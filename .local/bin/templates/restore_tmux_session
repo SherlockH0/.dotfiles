@@ -1,0 +1,14 @@
+#!/bin/sh
+
+SESSIONNAME="session" # Put session name here
+SESSIONDIRECTORY="~" # Put directory you want to start session in here
+
+tmux has-session -t $SESSIONNAME &> /dev/null
+
+if [ $? != 0 ]
+    then
+        tmux new-session -s $SESSIONNAME -n $SESSIONNAME -c $SESSIONDIRECTORY -d
+        tmux send-keys -t $SESSIONNAME "n ." C-m
+fi
+
+tmux attach -t $SESSIONNAME
