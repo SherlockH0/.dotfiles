@@ -13,10 +13,9 @@ return {
 		"rcarriga/nvim-notify",
 	},
 	config = function()
-        
-        local border_style = {
-            top_left =   "╭"
-        }
+		local border_style = {
+			top_left = "╭",
+		}
 
 		require("noice").setup({
 			lsp = {
@@ -35,13 +34,11 @@ return {
 				inc_rename = false, -- enables an input dialog for inc-rename.nvim
 				lsp_doc_border = false, -- add a border to hover docs and signature help
 			},
-            views = {
-                cmdline_popup = {
-                    border = {
-
-                    }
-                }
-            },
+			views = {
+				cmdline_popup = {
+					border = {},
+				},
+			},
 		})
 	end,
 }

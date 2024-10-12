@@ -1,13 +1,13 @@
 return {
 	"nvim-telescope/telescope.nvim",
 	tag = "0.1.5",
-	dependencies = { "nvim-lua/plenary.nvim", "nvim-telescope/telescope-media-files.nvim", "nvim-lua/popup.nvim" },
+	dependencies = { "nvim-lua/plenary.nvim", "nvim-lua/popup.nvim", "nvim-telescope/telescope-media-files.nvim" },
 	config = function()
 		require("telescope").load_extension("media_files")
 		require("telescope").setup({
 			extensions = {
 				media_files = {
-					filetypes = { "png", "webp", "jpg", "jpeg", "mp4", "webm", "pdf", "svg" },
+					filetypes = { "png", "jpg", "mp4", "webm", "pdf" },
 				},
 			},
 		})

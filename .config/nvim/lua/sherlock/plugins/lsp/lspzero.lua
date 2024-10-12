@@ -23,6 +23,18 @@ return {
 			exclude = { "html", "css" },
 		})
 		require("luasnip").filetype_extend("html", { "htmldjango" })
+		local luasnip = require("luasnip")
+		local snippet = luasnip.snippet
+		local text_node = luasnip.text_node
+		local insert_node = luasnip.insert_node
+
+		luasnip.add_snippets("markdown", {
+			snippet("badge", {
+				text_node("![Static Badge](https://img.shields.io/badge/"),
+				insert_node(1),
+				text_node(")"),
+			}),
+		})
 
 		lsp_zero.on_attach(function(client, bufnr)
 			lsp_zero.default_keymaps({ buffer = bufnr })

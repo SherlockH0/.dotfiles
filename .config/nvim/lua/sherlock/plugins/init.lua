@@ -1,5 +1,19 @@
 return {
 	{ "lewis6991/gitsigns.nvim", config = true },
+	{
+		"vhyrro/luarocks.nvim",
+		priority = 1001, -- this plugin needs to run before anything else
+		opts = {
+			rocks = { "magick" },
+		},
+	},
+	{
+		"3rd/image.nvim",
+		dependencies = { "luarocks.nvim" },
+		config = function()
+			-- ...
+		end,
+	},
 	"fladson/vim-kitty",
 	"lambdalisue/suda.vim",
 	{ "christoomey/vim-tmux-navigator", lazy = false },
