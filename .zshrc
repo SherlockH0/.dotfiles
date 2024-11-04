@@ -50,6 +50,9 @@ source /usr/share/zsh/plugins/zsh-vi-mode/zsh-vi-mode.plugin.zsh
 # Load zoxide and remap cd
 eval "$(zoxide init zsh --cmd cd)"
 
+fpath+=~/.zfunc
+autoload -Uz compinit && compinit
+
 # Load eniroment variables
 source ~/env.sh
 # Load aliases

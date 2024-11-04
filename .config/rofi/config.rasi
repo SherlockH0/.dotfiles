@@ -10,4 +10,5 @@ configuration {
     font: "FantasqueSansM Nerd Font Mono 14";   
 }
 
-@theme "~/.config/rofi/gruvbox-material.rasi"
+//@theme "~/.config/rofi/gruvbox-material.rasi"
+@theme "/usr/share/rofi/themes/gruvbox-dark-hard.rasi"

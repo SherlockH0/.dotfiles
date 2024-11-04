@@ -1,5 +1,11 @@
 return {
 	{ "lewis6991/gitsigns.nvim", config = true },
+	{ "elkowar/yuck.vim" },
+	{
+		"theRealCarneiro/hyprland-vim-syntax",
+		dependencies = { "nvim-treesitter/nvim-treesitter" },
+		ft = "hypr",
+	},
 	{
 		"vhyrro/luarocks.nvim",
 		priority = 1001, -- this plugin needs to run before anything else
