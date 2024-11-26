@@ -106,6 +106,9 @@ return {
 				require("lspconfig").html.setup({
 					filetypes = { "html", "htmldjango" },
 				}),
+				require("lspconfig").hyprls.setup({
+					filetypes = { "hypr" },
+				}),
 				require("lspconfig").ts_ls.setup({
 					filetypes = { "html", "htmldjango", "javascript", "typescript" },
 				}),

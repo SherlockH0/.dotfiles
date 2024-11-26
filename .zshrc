@@ -1,6 +1,4 @@
 # Set up the prompt
-
-
 setopt histignorealldups sharehistory
 
 # Use emacs keybindings even if our EDITOR is set to vi
@@ -33,7 +31,7 @@ zstyle ':completion:*' verbose true
 zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#)*=0=01;31'
 zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,tty,cputime,cmd'
 
-export PATH="$PATH:/home/$USER/.local/bin"
+export PATH="$PATH:/home/$USER/.local/bin:/home/sherlock/.cargo/bin"
 export EDITOR=nvim
 
 # Keybindings
@@ -53,8 +51,6 @@ eval "$(zoxide init zsh --cmd cd)"
 fpath+=~/.zfunc
 autoload -Uz compinit && compinit
 
-# Load eniroment variables
-source ~/env.sh
 # Load aliases
 source ~/aliases.sh
 
