@@ -18,7 +18,7 @@ visualizer_in_stereo = "yes"
 visualizer_fps = "60"
 visualizer_type = "ellipse"
 visualizer_look = ●●
-visualizer_color = "cyan,green,green,yellow,yellow,red,magenta,green"
+visualizer_color = "3,11,12,12,4,2,14,15"
 visualizer_spectrum_smooth_look = "yes"
 
 # GENERAL
@@ -42,12 +42,11 @@ ask_for_locked_screen_width_part = "yes"
 display_bitrate = "no"
 external_editor = "nano"
 main_window_color = "default"
-startup_screen = "playlist"
+startup_screen = "visualizer"
 
 # PROGRESS BAR
 # ---
-progressbar_look = "▪▪▪"
-#progressbar_look = "▃▃▃"
+progressbar_look = "━●━"
 progressbar_elapsed_color = "cyan"
 progressbar_color = "black"
 
