@@ -48,3 +48,9 @@ vim.opt.cursorline = true
 	end,
 }) ]]
 vim.o.sessionoptions = "blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal,localoptions"
+
+vim.opt.listchars = { tab = "→ ", nbsp = "␣", trail = "·" }
+
+vim.api.nvim_command(
+	"highlight UnicodeWhitespace term=reverse ctermfg=red ctermbg=NONE cterm=underline guifg=red guibg=NONE gui=reverse"
+)

@@ -1,4 +1,5 @@
 return {
+	{ "mfussenegger/nvim-dap" },
 	{ "lewis6991/gitsigns.nvim", config = true },
 	{ "elkowar/yuck.vim" },
 	{

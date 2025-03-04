@@ -23,6 +23,10 @@ return {
 			exclude = { "html", "css" },
 		})
 		require("luasnip").filetype_extend("html", { "htmldjango" })
+        require("lspconfig")["gdscript"].setup({
+            name = "godot",
+            cmd = vim.lsp.rpc.connect("127.0.0.1", "6005"),
+        })
 		local luasnip = require("luasnip")
 		local snippet = luasnip.snippet
 		local text_node = luasnip.text_node

@@ -1,0 +1,45 @@
+// ~/.config/fastfetch/config.jsonc
+{
+    "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
+    "logo": {
+        "type": "small",
+        "padding": {
+            "top": 3,
+            "left": 3,
+            "right": 6
+        }
+    },
+    "display": {
+        "separator": "    ",
+        "constants": [
+            "─────────────────" // {$1}, used in Custom module
+        ],
+        "key": {
+            "type": "icon"
+        }
+    },
+    "modules": [
+        "title",
+        {
+            "type": "custom",
+            "format": "{$1}"
+        },
+        "os",
+        "wm",
+        "packages",
+        "terminal",
+        "break",
+        "gpu",
+        "cpu",
+        "break",
+        "player",
+        {
+            "type": "custom",
+            "format": "{$1}"
+        },
+        {
+            "type": "colors",
+            "symbol": "circle"
+        }
+    ]
+}

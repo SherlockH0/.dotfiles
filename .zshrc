@@ -1,6 +1,7 @@
 # Set up the prompt
 setopt histignorealldups sharehistory
 
+
 # Use emacs keybindings even if our EDITOR is set to vi
 bindkey -v
 
@@ -36,6 +37,8 @@ export EDITOR=nvim
 
 # Keybindings
 bindkey "^[l" clear-screen
+bindkey "^[[A" history-beginning-search-backward
+bindkey "^[[B" history-beginning-search-forward
 
 # Start starship
 eval "$(starship init zsh)"
