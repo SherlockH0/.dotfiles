@@ -32,14 +32,16 @@ keymap.set("n", "<C-l>", "<cmd> TmuxNavigateRight<CR>")
 keymap.set("n", "<C-j>", "<cmd> TmuxNavigateDown<CR>")
 keymap.set("n", "<C-k>", "<cmd> TmuxNavigateUp<CR>")
 
-keymap.set("n", "]b", "<cmd> bnext<cr>")
-keymap.set("n", "[b", "<cmd> bprevious<cr>")
+keymap.set("n", "]b", "<cmd> bnext!<cr>")
+keymap.set("n", "[b", "<cmd> bprevious!<cr>")
 keymap.set("n", "[q", "<cmd> bd<cr>")
 
--- Change detect filetype
+-- Change detect file type
 keymap.set("n", "<leader>r", "<cmd>filetype detect<CR>")
 
 -- Print
 keymap.set("n", "<leader>ph", "<cmd>!firefox --headless --print file://% /tmp/nvim.pdf && lp /tmp/nvim.pdf<cr>")
 keymap.set("n", "<leader>pm", "<cmd>!pandoc % -o /tmp/nvim.pdf && lp /tmp/nvim.pdf<cr>")
 keymap.set("n", "<leader>pp", "<cmd>!lp %<cr>")
+
+keymap.set("n", "<leader>gv", "<cmd>Flog<CR>")

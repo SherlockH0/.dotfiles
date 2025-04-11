@@ -80,10 +80,9 @@ return {
 				dotfiles = true,
 			},
 		})
-
-		-- set keymaps
-		local keymap = vim.keymap
-		keymap.set("n", "<leader>o", "<cmd>NvimTreeToggle<CR>")
-		keymap.set("n", "<leader>fr", "<cmd>NvimTreeRefresh<CR>")
 	end,
+	keys = {
+		{ "<leader>o", "<cmd>NvimTreeToggle<CR>" },
+		{ "<leader>fr", "<cmd>NvimTreeRefresh<CR>" },
+	},
 }

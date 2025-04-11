@@ -12,7 +12,7 @@ vim.opt.smartindent = true
 
 local group = vim.api.nvim_create_augroup("TwoSpaceTab", { clear = true })
 vim.api.nvim_create_autocmd("FileType", {
-	pattern = "css,scss,rasi,html,htmldjango",
+	pattern = "css,scss,rasi,html,htmldjango,svelte",
 	callback = function()
 		vim.opt_local.shiftwidth = 2
 		vim.opt_local.softtabstop = 2
@@ -29,7 +29,7 @@ vim.opt.undofile = true
 vim.opt.hlsearch = false
 vim.opt.incsearch = true
 
-vim.opt.scrolloff = 16
+vim.opt.scrolloff = 999
 vim.opt.signcolumn = "yes"
 vim.opt.isfname:append("@-@")
 

@@ -1,5 +1,5 @@
 return {
-	"rmagatti/auto-session",
+	"williamboman/mason.nvim",
 	lazy = false,
 	opts = {},
 }

@@ -1,7 +1,7 @@
 return {
 	{ "mfussenegger/nvim-dap" },
 	{ "lewis6991/gitsigns.nvim", config = true },
-	{ "elkowar/yuck.vim" },
+	{ "elkowar/yuck.vim", ft = "yuck" },
 	{
 		"theRealCarneiro/hyprland-vim-syntax",
 		dependencies = { "nvim-treesitter/nvim-treesitter" },
@@ -17,23 +17,38 @@ return {
 	{
 		"3rd/image.nvim",
 		dependencies = { "luarocks.nvim" },
+		event = "VeryLazy",
 		config = function()
 			-- ...
 		end,
 	},
-	"fladson/vim-kitty",
-	"lambdalisue/suda.vim",
+	{
+		"fladson/vim-kitty",
+		ft = "kitty",
+		tag = "*", -- You can select a tagged version
+	},
+	{
+		cmd = "Suda",
+		"lambdalisue/suda.vim",
+	},
 	{ "christoomey/vim-tmux-navigator", lazy = false },
 	{
 		"eandrju/cellular-automaton.nvim",
-		config = function()
-			vim.keymap.set("n", "<leader>fml", "<cmd>CellularAutomaton make_it_rain<CR>")
-		end,
+		event = "VeryLazy",
+		keys = {
+			{ "<leader>mkr", "<cmd>CellularAutomaton make_it_rain<CR>" },
+			{ "<leader>scr", "<cmd>CellularAutomaton scrumble<CR>" },
+			{ "<leader>gof", "<cmd>CellularAutomaton game_of_life<CR>" },
+		},
 	},
-	"tpope/vim-surround",
-	"qaiviq/vim-imager",
+	{
+		"tpope/vim-surround",
+
+		event = "InsertEnter",
+	},
 	{
 		"lukas-reineke/indent-blankline.nvim",
+		event = "VeryLazy",
 		main = "ibl",
 		opts = {
 			indent = { char = "│", highlight = "VertSplit" },
