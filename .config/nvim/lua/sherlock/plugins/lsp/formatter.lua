@@ -27,7 +27,7 @@ return {
 				if vim.g.disable_autoformat or vim.b[bufnr].disable_autoformat then
 					return
 				end
-				return { timeout_ms = 5000, lsp_format = "fallback" }
+				return { timeout_ms = 5000, lsp_fallback = true, async = false }
 			end,
 		})
 		require("conform").formatters.djlint = {

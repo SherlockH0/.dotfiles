@@ -34,10 +34,9 @@ return {
 	{ "christoomey/vim-tmux-navigator", lazy = false },
 	{
 		"eandrju/cellular-automaton.nvim",
-		event = "VeryLazy",
 		keys = {
 			{ "<leader>mkr", "<cmd>CellularAutomaton make_it_rain<CR>" },
-			{ "<leader>scr", "<cmd>CellularAutomaton scrumble<CR>" },
+			{ "<leader>scr", "<cmd>CellularAutomaton scramble<CR>" },
 			{ "<leader>gof", "<cmd>CellularAutomaton game_of_life<CR>" },
 		},
 	},

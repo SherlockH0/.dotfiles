@@ -1,7 +1,6 @@
 return {
 	"startup-nvim/startup.nvim",
 	dependencies = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" },
-	event = "GUIEnter",
 	config = function()
 		require("startup").setup({
 			header = {
