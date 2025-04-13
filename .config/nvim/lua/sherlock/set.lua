@@ -45,3 +45,6 @@ vim.opt.listchars = { tab = "→ ", nbsp = "␣", trail = "·" }
 vim.api.nvim_command(
 	"highlight UnicodeWhitespace term=reverse ctermfg=red ctermbg=NONE cterm=underline guifg=red guibg=NONE gui=reverse"
 )
+
+vim.opt.spell = true
+vim.opt.spelllang = { "en_us", "ru" }

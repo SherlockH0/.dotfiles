@@ -21,13 +21,13 @@ return {
 			typescript = { "snyk_iac" },
 		}
 		local lint_autogroup = vim.api.nvim_create_augroup("lint", { clear = true })
+		local lint = require("lint")
 
-		vim.api.nvim_create_autocmd({ "BufEnter", "BufWritePost", "InsertLeave" }, {
+		vim.api.nvim_create_autocmd({ "BufWritePost", "InsertLeave" }, {
 			group = lint_autogroup,
 			callback = function()
 				require("lint").try_lint()
 				require("lint").try_lint("editorconfig-checker")
-				require("lint").try_lint("misspell")
 			end,
 		})
 		vim.keymap.set("n", "<leader>ll", require("lint").try_lint, {})

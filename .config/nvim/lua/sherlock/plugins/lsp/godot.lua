@@ -1,11 +1,16 @@
 return {
-	"habamax/vim-godot",
-	cmd = { "GodotRunLast", "GodotRun", "GodotRunCurrent", "GodotRunFZF" },
+	"loomix/godot.nvim",
+	cmd = { "GodotDebug", "GodotBreakAtCursor", "GodotStep", "GodotQuit", "GodotContinue" },
 	ft = { "gdscript" },
-	keys = {
-		{ "<F4>", ":GodotRunLast<CR>" },
-		{ "<F5>", ":GodotRun<CR>" },
-		{ "<F6>", ":GodotRunCurrent<CR>" },
-		{ "<F7>", ":GodotRunFZF<CR>" },
-	},
+	config = function()
+		local godot = require("godot")
+		godot.setup({
+			bin = "godot",
+		})
+		vim.keymap.set("n", "<leader>dr", godot.debugger.debug)
+		vim.keymap.set("n", "<leader>dd", godot.debugger.debug_at_cursor)
+		vim.keymap.set("n", "<leader>dq", godot.debugger.quit)
+		vim.keymap.set("n", "<leader>dc", godot.debugger.continue)
+		vim.keymap.set("n", "<leader>ds", godot.debugger.step)
+	end,
 }
