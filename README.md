@@ -1,7 +1,7 @@
 # My dotfiles
 
 > [!NOTE]
-> This repo contains only dotfiles unrelated to the window manager. [My window manager config.](github.com/SherlockH0/HyprGruvbox).
+> This repo contains only dotfiles unrelated to the window manager. [My window manager config](github.com/SherlockH0/HyprGruvbox).
 
 ## Gallery
 
