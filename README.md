@@ -1,5 +1,14 @@
 # My dotfiles
 
+> [!NOTE]
+> This repo contains only dotfiles unrelated to the window manager. For the window manager configuration, see github.com/SherlockH0/HyprGruvbox.
+
+## Gallery
+
+![fastfetch](https://raw.githubusercontent.com/SherlockH0/.dotfiles/refs/heads/main/previews/fastfetch.png)
+![neovim](https://raw.githubusercontent.com/SherlockH0/.dotfiles/refs/heads/main/previews/nvim.png)
+![ncmpcpp](https://raw.githubusercontent.com/SherlockH0/.dotfiles/refs/heads/main/previews/ncmpcpp.png)
+
 ## Applications
 
 - Terminal emulator: `kitty`
