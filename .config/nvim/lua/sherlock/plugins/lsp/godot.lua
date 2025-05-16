@@ -1,5 +1,5 @@
 return {
-	"loomix/godot.nvim",
+	"lommix/godot.nvim",
 	cmd = { "GodotDebug", "GodotBreakAtCursor", "GodotStep", "GodotQuit", "GodotContinue" },
 	ft = { "gdscript" },
 	config = function()

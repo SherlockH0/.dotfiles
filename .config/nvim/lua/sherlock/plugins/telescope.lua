@@ -4,9 +4,23 @@ return {
 	dependencies = {
 		"nvim-lua/plenary.nvim",
 		"nvim-lua/popup.nvim",
+		"Snikimonkd/telescope-git-conflicts.nvim",
 	},
-	config = function()
-		require("telescope").setup({})
+	opts = {
+		defaults = {
+			mappings = {
+				n = {
+					["<c-d>"] = require("telescope.actions").delete_buffer,
+				}, -- n
+				i = {
+					["<C-h>"] = "which_key",
+					["<c-d>"] = require("telescope.actions").delete_buffer,
+				}, -- i
+			}, -- mappings
+		},
+	},
+	init = function()
+		require("telescope").load_extension("conflicts")
 	end,
 	keys = {
 		{ "<leader>ff", require("telescope.builtin").find_files },
@@ -21,7 +35,8 @@ return {
 		},
 		{ "<leader>fg", require("telescope.builtin").live_grep },
 		{ "<leader>ft", require("telescope.builtin").resume },
-		{ "<leader>fl", require("telescope.builtin").treesitter },
+		{ "<leader>fl", require("telescope").extensions.aerial.aerial },
+		{ "<leader>fc", "<cmd>Telescope conflicts<cr>" },
 		{ "<leader>fd", require("telescope.builtin").diagnostics },
 		{
 			"<leader>fj",

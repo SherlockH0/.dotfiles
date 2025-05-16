@@ -18,17 +18,14 @@ return {
 	end,
 	config = function()
 		local lsp_defaults = require("lspconfig").util.default_config
+		local lspconfig = require("lspconfig")
+
 		lsp_defaults.capabilities =
 			vim.tbl_deep_extend("force", lsp_defaults.capabilities, require("cmp_nvim_lsp").default_capabilities())
 
-		require("luasnip.loaders.from_vscode").lazy_load({
-			exclude = { "html", "css" },
-		})
+		require("luasnip.loaders.from_vscode").lazy_load()
 		require("luasnip").filetype_extend("html", { "htmldjango" })
-		require("lspconfig")["gdscript"].setup({
-			name = "godot",
-			cmd = vim.lsp.rpc.connect("127.0.0.1", 6005),
-		})
+
 		vim.api.nvim_create_autocmd("LspAttach", {
 			desc = "LSP actions",
 			callback = function(event)
@@ -69,47 +66,58 @@ return {
 		vim.diagnostic.config({
 			signs = {
 				text = {
-					[vim.diagnostic.severity.ERROR] = "",
-					[vim.diagnostic.severity.WARN] = "",
-					[vim.diagnostic.severity.HINT] = "󰌶",
+					[vim.diagnostic.severity.ERROR] = "󰅚",
+					[vim.diagnostic.severity.WARN] = "󰀪",
+					[vim.diagnostic.severity.HINT] = "󰅾",
 					[vim.diagnostic.severity.INFO] = "󰋽",
 				},
 			},
 		})
 		require("mason-lspconfig").setup({
+			automatic_enable = true,
+			automatic_installation = true,
 			ensure_installed = {
 				"ts_ls",
 				"lua_ls",
-				"pyright",
-				"emmet_language_server",
 				"tailwindcss",
 				"html",
 				"pyright",
+				"docker_compose_language_service",
+				"hyprls",
+				"cssls",
+				"css_variables",
+				"dockerls",
+				"jsonls",
+				"svelte",
+				"taplo",
+				"volar",
+				"nginx_language_server",
 			},
-			automatic_installation = true,
 			handlers = {
 				function(server_name)
-					require("lspconfig")[server_name].setup({})
+					lspconfig[server_name].setup({})
 				end,
-				require("lspconfig").lua_ls.setup({
-					settings = {
-						Lua = {
-							diagnostics = {
-								-- Get the language server to recognize the `vim` global
-								globals = { "vim" },
+				["html"] = function()
+					lspconfig.html.setup({
+						filetypes = { "html", "htmldjango" },
+					})
+				end,
+				-- TypeScript
+				["ts_ls"] = function()
+					lspconfig.ts_ls.setup({
+						filetypes = { "typescript", "javascript", "javascriptreact", "typescriptreact", "vue" },
+						init_options = {
+							plugins = {
+								{
+									name = "@vue/typescript-plugin",
+									location = vim.fn.stdpath("data")
+										.. "/mason/packages/vue-language-server/node_modules/@vue/language-server",
+									languages = { "vue" },
+								},
 							},
 						},
-					},
-				}),
-				require("lspconfig").html.setup({
-					filetypes = { "html", "htmldjango" },
-				}),
-				require("lspconfig").hyprls.setup({
-					filetypes = { "hypr" },
-				}),
-				require("lspconfig").ts_ls.setup({
-					filetypes = { "html", "htmldjango", "javascript", "typescript" },
-				}),
+					})
+				end,
 			},
 		})
 	end,

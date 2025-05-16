@@ -39,9 +39,4 @@ keymap.set("n", "[q", "<cmd> bd<cr>")
 -- Change detect file type
 keymap.set("n", "<leader>r", "<cmd>filetype detect<CR>")
 
--- Print
-keymap.set("n", "<leader>ph", "<cmd>!firefox --headless --print file://% /tmp/nvim.pdf && lp /tmp/nvim.pdf<cr>")
-keymap.set("n", "<leader>pm", "<cmd>!pandoc % -o /tmp/nvim.pdf && lp /tmp/nvim.pdf<cr>")
-keymap.set("n", "<leader>pp", "<cmd>!lp %<cr>")
-
 keymap.set("n", "<leader>gv", "<cmd>Flog<CR>")

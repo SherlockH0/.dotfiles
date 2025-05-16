@@ -23,7 +23,7 @@
 Use your favorite package manager (`paru -S` or `pacman -S` for Arch) to install these dependencies and applications:
 
 ```bash
-git stow ripgrep npm
+luarocks git stow ripgrep npm
 kitty tmux neovim ncmpcpp mpddris2-git fastfetch
 ```
 

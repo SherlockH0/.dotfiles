@@ -72,7 +72,7 @@ return {
 			},
 			mapping = cmp.mapping.preset.insert({
 				["<CR>"] = cmp.mapping.confirm({ select = false }),
-				["<S-E>"] = cmp.mapping.complete(),
+				["<C-e>"] = cmp.mapping.complete(),
 				["<C-f>"] = cmp.mapping(function(fallback)
 					local luasnip = require("luasnip")
 					if luasnip.locally_jumpable(1) then

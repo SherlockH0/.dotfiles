@@ -1,6 +1,5 @@
 return {
 	{ "mfussenegger/nvim-dap" },
-	{ "lewis6991/gitsigns.nvim", config = true },
 	{ "elkowar/yuck.vim", ft = "yuck" },
 	{
 		"theRealCarneiro/hyprland-vim-syntax",
@@ -8,12 +7,19 @@ return {
 		ft = "hypr",
 	},
 	{
-		"vhyrro/luarocks.nvim",
-		priority = 1001, -- this plugin needs to run before anything else
+		"folke/todo-comments.nvim",
+		dependencies = { "nvim-lua/plenary.nvim" },
 		opts = {
-			rocks = { "magick" },
+			signs = false,
 		},
 	},
+	-- {
+	-- 	"vhyrro/luarocks.nvim",
+	-- 	priority = 1001, -- this plugin needs to run before anything else
+	-- 	opts = {
+	-- 		rocks = { "magick" },
+	-- 	},
+	-- },
 	{
 		"3rd/image.nvim",
 		dependencies = { "luarocks.nvim" },
@@ -25,7 +31,6 @@ return {
 	{
 		"fladson/vim-kitty",
 		ft = "kitty",
-		tag = "*", -- You can select a tagged version
 	},
 	{
 		cmd = "Suda",
@@ -42,7 +47,6 @@ return {
 	},
 	{
 		"tpope/vim-surround",
-
 		event = "InsertEnter",
 	},
 	{

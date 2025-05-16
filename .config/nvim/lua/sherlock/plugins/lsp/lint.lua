@@ -13,7 +13,7 @@ return {
 			markdown = { "vale" },
 			makefile = { "checkmake" },
 			git = { "gitlint" },
-			python = { "flake8", "snyk_iac", "pydocstyle" },
+			python = { "snyk_iac", "pydocstyle" },
 			django = { "djlint" },
 			dockerfile = { "hadolint", "snyk_iac" },
 			godot = { "gdtoolkit" },

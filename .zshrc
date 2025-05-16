@@ -33,12 +33,12 @@ zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#)*=0=01;31'
 zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,tty,cputime,cmd'
 
 export PATH="$PATH:/home/$USER/.local/bin:/home/sherlock/.cargo/bin"
-export EDITOR=nvim
 
 # Keybindings
 bindkey "^[l" clear-screen
 bindkey "^[[A" history-beginning-search-backward
 bindkey "^[[B" history-beginning-search-forward
+bindkey "^i" vi-forward-word
 
 # Start starship
 eval "$(starship init zsh)"
@@ -71,3 +71,13 @@ eval "$(pyenv init -)"
 if [[ -d ./venv ]] ; then
     source ./venv/bin/activate
 fi
+
+# change the current working directory when exiting Yazi.
+function y() {
+	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
+	yazi "$@" --cwd-file="$tmp"
+	if cwd="$(command cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
+		builtin cd -- "$cwd"
+	fi
+	rm -f -- "$tmp"
+}

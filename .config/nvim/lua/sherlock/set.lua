@@ -12,7 +12,7 @@ vim.opt.smartindent = true
 
 local group = vim.api.nvim_create_augroup("TwoSpaceTab", { clear = true })
 vim.api.nvim_create_autocmd("FileType", {
-	pattern = "css,scss,rasi,html,htmldjango,svelte",
+	pattern = "lua,css,scss,rasi,html,htmldjango,svelte,vue,js,ts",
 	callback = function()
 		vim.opt_local.shiftwidth = 2
 		vim.opt_local.softtabstop = 2

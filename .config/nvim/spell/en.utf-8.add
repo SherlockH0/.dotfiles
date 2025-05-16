@@ -13,3 +13,8 @@ https
 pre
 html
 flake8
+Middleware
+reportIncompatibleMethodOverride
+pyright
+django
+WebSocket
