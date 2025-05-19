@@ -1,7 +1,6 @@
 return {
 	"kawre/leetcode.nvim",
 	build = ":TSUpdate html",
-	lazy = false,
 	dependencies = {
 		"nvim-telescope/telescope.nvim",
 		"nvim-lua/plenary.nvim", -- required by telescope
@@ -14,6 +13,5 @@ return {
 	},
 	opts = {
 		lang = "python3",
-		image_support = true,
 	},
 }

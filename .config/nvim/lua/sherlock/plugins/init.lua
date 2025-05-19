@@ -1,40 +1,26 @@
 return {
-	{ "mfussenegger/nvim-dap" },
 	{ "elkowar/yuck.vim", ft = "yuck" },
-	{
-		"theRealCarneiro/hyprland-vim-syntax",
-		dependencies = { "nvim-treesitter/nvim-treesitter" },
-		ft = "hypr",
-	},
 	{
 		"folke/todo-comments.nvim",
 		dependencies = { "nvim-lua/plenary.nvim" },
+		event = { "VeryLazy" },
 		opts = {
 			signs = false,
 		},
 	},
-	-- {
-	-- 	"vhyrro/luarocks.nvim",
-	-- 	priority = 1001, -- this plugin needs to run before anything else
-	-- 	opts = {
-	-- 		rocks = { "magick" },
-	-- 	},
-	-- },
 	{
-		"3rd/image.nvim",
-		dependencies = { "luarocks.nvim" },
-		event = "VeryLazy",
-		config = function()
-			-- ...
-		end,
+		"m4xshen/hardtime.nvim",
+		lazy = false,
+		dependencies = { "MunifTanjim/nui.nvim" },
+		opts = {},
 	},
 	{
 		"fladson/vim-kitty",
 		ft = "kitty",
 	},
 	{
-		cmd = "Suda",
 		"lambdalisue/suda.vim",
+		cmd = "Suda",
 	},
 	{ "christoomey/vim-tmux-navigator", lazy = false },
 	{

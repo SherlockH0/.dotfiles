@@ -1,6 +1,5 @@
 return {
 	"lommix/godot.nvim",
-	cmd = { "GodotDebug", "GodotBreakAtCursor", "GodotStep", "GodotQuit", "GodotContinue" },
 	ft = { "gdscript" },
 	config = function()
 		local godot = require("godot")

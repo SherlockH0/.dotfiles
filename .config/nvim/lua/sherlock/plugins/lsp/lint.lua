@@ -27,7 +27,6 @@ return {
 			group = lint_autogroup,
 			callback = function()
 				require("lint").try_lint()
-				require("lint").try_lint("editorconfig-checker")
 			end,
 		})
 		vim.keymap.set("n", "<leader>ll", require("lint").try_lint, {})

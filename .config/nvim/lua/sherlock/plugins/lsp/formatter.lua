@@ -1,7 +1,6 @@
 return {
 	"stevearc/conform.nvim",
 	event = { "BufReadPre", "BufNewFile" },
-	enable = false,
 	opts = {
 		formatters_by_ft = {
 			javascript = { "prettierd" },
@@ -22,12 +21,12 @@ return {
 			gdscript = { "gdformat" },
 			toml = { "taplo" },
 		},
-		format_on_save = function(bufnr)
+		format_after_save = function(bufnr)
 			-- Disable with a global or buffer-local variable
 			if vim.g.disable_autoformat or vim.b[bufnr].disable_autoformat then
 				return
 			end
-			return { timeout_ms = 500, lsp_fallback = true, async = false }
+			return { timeout_ms = 2000, lsp_fallback = true, async = true }
 		end,
 		formatters = {
 			djlint = {
@@ -41,7 +40,11 @@ return {
 			mode = { "n", "v", "i" },
 			"<Alt>f",
 			function()
-				require("conform").format()
+				require("conform").format({
+					timeout_ms = 500,
+					lsp_fallback = true,
+					async = false,
+				})
 			end,
 			desc = "Format file or range (in visual mode)",
 		},

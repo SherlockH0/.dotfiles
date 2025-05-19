@@ -12,7 +12,8 @@ return {
 	},
 	{
 		"lewis6991/gitsigns.nvim",
-		opts = { current_line_blame = true },
+		opts = { current_line_blame = false },
+		event = { "VeryLazy" },
 		keys = {
 			{ "<leader>tb", "<cmd>Gitsigns toggle_current_line_blame<cr>", desc = "Toggle current line blame" },
 		},
