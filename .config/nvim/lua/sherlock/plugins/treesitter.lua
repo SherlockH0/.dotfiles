@@ -1,5 +1,6 @@
 return {
 	"nvim-treesitter/nvim-treesitter",
+	dependencies = { "nvim-treesitter/nvim-treesitter-context" },
 	build = ":TSUpdate",
 	config = function()
 		require("nvim-treesitter.configs").setup({
@@ -17,5 +18,7 @@ return {
 				additional_vim_regex_highlighting = false,
 			},
 		})
+		require("treesitter-context").setup({})
+		vim.cmd([[hi TreesitterContext gui=italic ]])
 	end,
 }

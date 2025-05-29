@@ -48,3 +48,6 @@ vim.api.nvim_command(
 
 vim.opt.spell = true
 vim.opt.spelllang = { "en_us", "ru" }
+
+vim.opt.ignorecase = true
+vim.opt.smartcase = true

@@ -1,5 +1,6 @@
 return {
 	{ "elkowar/yuck.vim", ft = "yuck" },
+	{ "wakatime/vim-wakatime", lazy = false },
 	{
 		"folke/todo-comments.nvim",
 		dependencies = { "nvim-lua/plenary.nvim" },

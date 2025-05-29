@@ -3,6 +3,7 @@ return {
 	event = { "BufReadPre", "BufNewFile" },
 	opts = {
 		formatters_by_ft = {
+			sql = { "sqlfmt" },
 			javascript = { "prettierd" },
 			typescript = { "prettierd" },
 			vue = { "prettierd" },
@@ -38,7 +39,7 @@ return {
 	keys = {
 		{
 			mode = { "n", "v", "i" },
-			"<Alt>f",
+			"<M-f>",
 			function()
 				require("conform").format({
 					timeout_ms = 500,

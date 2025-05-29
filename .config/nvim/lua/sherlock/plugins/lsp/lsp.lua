@@ -88,7 +88,7 @@ return {
 				"jsonls",
 				"svelte",
 				"taplo",
-				"volar",
+				-- "vue_ls",
 				"nginx_language_server",
 			},
 			handlers = {
@@ -101,21 +101,21 @@ return {
 					})
 				end,
 				-- TypeScript
-				["ts_ls"] = function()
-					lspconfig.ts_ls.setup({
-						filetypes = { "typescript", "javascript", "javascriptreact", "typescriptreact", "vue" },
-						init_options = {
-							plugins = {
-								{
-									name = "@vue/typescript-plugin",
-									location = vim.fn.stdpath("data")
-										.. "/mason/packages/vue-language-server/node_modules/@vue/language-server",
-									languages = { "vue" },
-								},
-							},
-						},
-					})
-				end,
+				-- ["ts_ls"] = function()
+				-- 	lspconfig.ts_ls.setup({
+				-- 		filetypes = { "typescript", "javascript", "javascriptreact", "typescriptreact", "vue" },
+				-- 		init_options = {
+				-- 			plugins = {
+				-- 				{
+				-- 					name = "@vue/typescript-plugin",
+				-- 					location = vim.fn.stdpath("data")
+				-- 						.. "/mason/packages/vue-language-server/node_modules/@vue/language-server",
+				-- 					languages = { "vue" },
+				-- 				},
+				-- 			},
+				-- 		},
+				-- 	})
+				-- end,
 			},
 		})
 	end,
