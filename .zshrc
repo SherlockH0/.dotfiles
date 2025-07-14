@@ -1,8 +1,6 @@
 # Set up the prompt
 setopt histignorealldups sharehistory
 
-
-# Use emacs keybindings even if our EDITOR is set to vi
 bindkey -v
 
 # Keep 1000 lines of history within the shell and save it to ~/.zsh_history:
@@ -38,7 +36,7 @@ export PATH="$PATH:/home/$USER/.local/bin:/home/sherlock/.cargo/bin"
 bindkey "^[l" clear-screen
 bindkey "^[[A" history-beginning-search-backward
 bindkey "^[[B" history-beginning-search-forward
-bindkey "^i" vi-forward-word
+# bindkey "^i" vi-forward-word
 
 # Start starship
 eval "$(starship init zsh)"
@@ -47,6 +45,7 @@ eval "$(starship init zsh)"
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 source /usr/share/zsh/plugins/zsh-vi-mode/zsh-vi-mode.plugin.zsh
+
 
 # Load zoxide and remap cd
 eval "$(zoxide init zsh --cmd cd)"
@@ -71,10 +70,20 @@ fi
 
 # change the current working directory when exiting Yazi.
 function y() {
-	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
-	yazi "$@" --cwd-file="$tmp"
-	if cwd="$(command cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
-		builtin cd -- "$cwd"
-	fi
-	rm -f -- "$tmp"
+    local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
+    yazi "$@" --cwd-file="$tmp"
+    if cwd="$(command cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
+        builtin cd -- "$cwd"
+    fi
+    rm -f -- "$tmp"
 }
+cheatsh() {
+    curl cheat.sh/"$1"
+}
+bindkey '^R' fzf-history-widget
+# fzf
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion

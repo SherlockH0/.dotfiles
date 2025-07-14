@@ -12,13 +12,13 @@ vim.opt.smartindent = true
 
 local group = vim.api.nvim_create_augroup("TwoSpaceTab", { clear = true })
 vim.api.nvim_create_autocmd("FileType", {
-	pattern = "lua,css,scss,rasi,html,htmldjango,svelte,vue,js,ts",
-	callback = function()
-		vim.opt_local.shiftwidth = 2
-		vim.opt_local.softtabstop = 2
-		vim.opt_local.shiftwidth = 2
-	end,
-	group = group,
+  pattern = "lua,css,scss,rasi,html,htmldjango,svelte,vue,js,ts",
+  callback = function()
+    vim.opt_local.shiftwidth = 2
+    vim.opt_local.softtabstop = 2
+    vim.opt_local.shiftwidth = 2
+  end,
+  group = group,
 })
 
 vim.opt.swapfile = false
@@ -43,7 +43,7 @@ vim.o.sessionoptions = "blank,buffers,curdir,folds,help,tabpages,winsize,winpos,
 vim.opt.listchars = { tab = "→ ", nbsp = "␣", trail = "·" }
 
 vim.api.nvim_command(
-	"highlight UnicodeWhitespace term=reverse ctermfg=red ctermbg=NONE cterm=underline guifg=red guibg=NONE gui=reverse"
+  "highlight UnicodeWhitespace term=reverse ctermfg=red ctermbg=NONE cterm=underline guifg=red guibg=NONE gui=reverse"
 )
 
 vim.opt.spell = true

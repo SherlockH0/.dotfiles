@@ -18,3 +18,4 @@ reportIncompatibleMethodOverride
 pyright
 django
 WebSocket
+noqa
